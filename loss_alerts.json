@@ -1,0 +1,108 @@
+{
+    "type": "LOSS_ALERT",
+    "trade_id": "685a9fc8884865c2c962896f",
+    "instrument_id": "1_2",
+    "order_side": "buy",
+    "order_price": 79.0,
+    "current_price": 43.41,
+    "loss_pct": 45.05,
+    "order_placed_time": "2025-06-24T12:53:28.222032",
+    "market_timestamp": "2025-06-25T17:39:45.740208",
+    "alert_time_utc": "2025-06-25T12:09:46.369598"
+}
+{
+    "type": "LOSS_ALERT",
+    "trade_id": "685b9c4b5962406058d298c8",
+    "instrument_id": "1_2",
+    "order_side": "buy",
+    "order_price": 185.0,
+    "current_price": 43.41,
+    "loss_pct": 76.54,
+    "order_placed_time": "2025-06-25T06:50:51.842890",
+    "market_timestamp": "2025-06-25T17:39:45.740208",
+    "alert_time_utc": "2025-06-25T12:09:46.369598"
+}
+{
+    "type": "LOSS_ALERT",
+    "trade_id": "685b9e37208df8c22f1373d7",
+    "instrument_id": "1_2",
+    "order_side": "buy",
+    "order_price": 176.0,
+    "current_price": 43.41,
+    "loss_pct": 75.34,
+    "order_placed_time": "2025-06-25T06:59:03.836380",
+    "market_timestamp": "2025-06-25T17:39:45.740208",
+    "alert_time_utc": "2025-06-25T12:09:46.369598"
+}
+{
+    "type": "LOSS_ALERT",
+    "trade_id": "685a9fc8884865c2c962896f",
+    "instrument_id": "1_2",
+    "order_side": "buy",
+    "order_price": 79.0,
+    "current_price": 45.11,
+    "loss_pct": 42.9,
+    "order_placed_time": "2025-06-24T12:53:28.222032",
+    "market_timestamp": "2025-06-25T17:40:24.048508",
+    "alert_time_utc": "2025-06-25T12:10:24.956286"
+}
+{
+    "type": "LOSS_ALERT",
+    "trade_id": "685b9c4b5962406058d298c8",
+    "instrument_id": "1_2",
+    "order_side": "buy",
+    "order_price": 185.0,
+    "current_price": 45.11,
+    "loss_pct": 75.62,
+    "order_placed_time": "2025-06-25T06:50:51.842890",
+    "market_timestamp": "2025-06-25T17:40:24.048508",
+    "alert_time_utc": "2025-06-25T12:10:24.956286"
+}
+{
+    "type": "LOSS_ALERT",
+    "trade_id": "685b9e37208df8c22f1373d7",
+    "instrument_id": "1_2",
+    "order_side": "buy",
+    "order_price": 176.0,
+    "current_price": 45.11,
+    "loss_pct": 74.37,
+    "order_placed_time": "2025-06-25T06:59:03.836380",
+    "market_timestamp": "2025-06-25T17:40:24.048508",
+    "alert_time_utc": "2025-06-25T12:10:24.956286"
+}
+{
+    "type": "LOSS_ALERT",
+    "trade_id": "685a9fc8884865c2c962896f",
+    "instrument_id": "1_2",
+    "order_side": "buy",
+    "order_price": 79.0,
+    "current_price": 43.73,
+    "loss_pct": 44.65,
+    "order_placed_time": "2025-06-24T12:53:28.222032",
+    "market_timestamp": "2025-06-25T17:41:19.518036",
+    "alert_time_utc": "2025-06-25T12:11:19.550376"
+}
+{
+    "type": "LOSS_ALERT",
+    "trade_id": "685b9c4b5962406058d298c8",
+    "instrument_id": "1_2",
+    "order_side": "buy",
+    "order_price": 185.0,
+    "current_price": 43.73,
+    "loss_pct": 76.36,
+    "order_placed_time": "2025-06-25T06:50:51.842890",
+    "market_timestamp": "2025-06-25T17:41:19.518036",
+    "alert_time_utc": "2025-06-25T12:11:19.550376"
+}
+{
+    "type": "LOSS_ALERT",
+    "trade_id": "685b9e37208df8c22f1373d7",
+    "instrument_id": "1_2",
+    "order_side": "buy",
+    "order_price": 176.0,
+    "current_price": 43.73,
+    "loss_pct": 75.15,
+    "order_placed_time": "2025-06-25T06:59:03.836380",
+    "market_timestamp": "2025-06-25T17:41:19.518036",
+    "alert_time_utc": "2025-06-25T12:11:19.550376"
+}
