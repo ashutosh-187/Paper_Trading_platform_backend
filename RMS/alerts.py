@@ -5,7 +5,7 @@ from OMS.manage_order import fetch_all_data_strip_prefix
 def check_trade_losses(
     redis_client,
     trade_book_coll,        # now a pymongo Collection
-    threshold_pct=25.0,
+    threshold_pct=1.0,
     alerted_ids=None,       # set to track already alerted trades
     log_file_path='loss_alerts.json'
 ):
@@ -22,7 +22,10 @@ def check_trade_losses(
 
     # 2. Pull all open trades from MongoDB
     #    (you can filter here—for example only trades not yet closed)
-    cursor = trade_book_coll.find({})
+    cursor = trade_book_coll.find({}, {
+        "order_placement_time": 0,
+        "order_execution_time": 0
+    })
     for trade in cursor:
         # normalize trade_id
         raw_id = trade.get("_id")
@@ -65,7 +68,7 @@ def check_trade_losses(
                 "market_timestamp": market_data[instr].get("timestamp"),
                 "alert_time_utc":    now_str
             }
-            print(json.dumps({"type": "LOSS_ALERT", **alert}))
+            # print(json.dumps({"type": "LOSS_ALERT", **alert}))
             try:
                 with open(log_file_path, "a") as f:
                     f.write(json.dumps({"type": "LOSS_ALERT", **alert}) + "\n")
@@ -73,5 +76,4 @@ def check_trade_losses(
                 print(f"Failed to write alert: {e}")
 
             alerted_ids.add(str(trade_id))
-
-    return alerted_ids
+    return list(alerted_ids)

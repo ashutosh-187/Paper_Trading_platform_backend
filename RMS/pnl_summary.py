@@ -30,7 +30,7 @@ def calculate_mtm_pnl(trade_book_collection, redis_client):
     
     for instrument_id, instrument_trades in trades_by_instrument.items():
         # Sort by order_placed_time for FIFO
-        instrument_trades.sort(key=lambda x: x['order_placed_time'])
+        instrument_trades.sort(key=lambda x: x['order_placement_time'])
         
         # Get live price if available
         live_entry = live_data.get(instrument_id)

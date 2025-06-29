@@ -29,7 +29,9 @@ from RMS.alerts import (
     check_trade_losses
 )
 
-
+# from LTM.main import(
+#     start_dashboard
+# )
 # Initialize Flask app
 app = Flask(__name__)
 
@@ -134,9 +136,16 @@ def net_pnl():
     response = calculate_mtm_pnl(trade_book_collection, redis_client)
     return jsonify(response)
 
-# @app.route("/get_alerts", methods=["GET"])
-# def trade_alerts():
-#     response = check_trade_losses(redis_client, trade_book_collection)
+@app.route("/get_alerts", methods=["GET"])
+def trade_alerts():
+    response = check_trade_losses(redis_client, trade_book_collection)
+    print(response)
+    return jsonify(response)
+
+# @app.route("/get_latency", methods=["GET"])
+# def latency():
+#     response = start_dashboard(redis_client, db)
+#     print(response)
 #     return jsonify(response)
 
 # def pending_list_thread():
@@ -165,13 +174,14 @@ def pending_list_thread():
             # Check pending orders
             result = pending_list_orders(redis_client, trade_logs_collection, trade_book_collection)
             if result.get("status") == "order(s) filled":
-                print(f"Orders filled: {result}")
+                print(f"Pending list update: {result}")
             # Check stop-loss orders
             # sl_result = implement_stop_loss(redis_client, trade_logs_collection, trade_book_collection)
             # if sl_result:
             #     print(f"Stop loss triggered: {sl_result}")
             # Sleep to avoid busy loop
-            time.sleep(5)  # adjust interval as needed
+            # adjust interval as needed
+            time.sleep(1)
         except Exception as e:
 
             time.sleep(5)
@@ -181,11 +191,23 @@ def stop_loss_thread():
     while True:
         try:
             sl_result = implement_stop_loss(redis_client, trade_logs_collection, trade_book_collection)
-            if sl_result:
-                print(f"Stop loss triggered: {sl_result}")
+            # if sl_result:
+                # print(f"Stop loss triggered: {sl_result}")
             time.sleep(5)  # interval for stop-loss checks
         except Exception as e:
             print(f"Error in stop_loss_thread: {e}")
+            time.sleep(5)
+
+def alert_thread():
+    print("Starting alert thread...")
+    while True:
+        try:
+            sl_result = check_trade_losses(redis_client, trade_book_collection)
+            # if sl_result:
+            #     print(f"Alert triggered: {sl_result}")
+            time.sleep(5)  # interval for stop-loss checks
+        except Exception as e:
+            print(f"Error in alert thread: {e}")
             time.sleep(5)
 
 # Start pending-list thread
@@ -198,6 +220,12 @@ print("Pending list thread started!")
 print("Initializing stop-loss thread...")
 thread_stop_loss = threading.Thread(target=stop_loss_thread, daemon=True)
 thread_stop_loss.start()
+print("Stop-loss thread started!")
+
+# Start alert thread
+print("Initializing alert thread...")
+thread_alert = threading.Thread(target=alert_thread, daemon=True)
+thread_alert.start()
 print("Stop-loss thread started!")
 
 if __name__ == '__main__':
