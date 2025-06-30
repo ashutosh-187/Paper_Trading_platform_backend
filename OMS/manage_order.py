@@ -385,7 +385,7 @@ if __name__ == "__main__":
         db=0,
         decode_responses=True
     )
-
+    square_off("1_12", trade_book_collection, trade_logs_collection, redis_client)
     # --- Example Usage ---
 
     # Example 1: Place an order that might not fill immediately

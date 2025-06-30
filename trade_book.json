@@ -1,0 +1,24 @@
+[
+    {
+        "date": "2024-11-18",
+        "signal": "BUY",
+        "order_placement_time": "2025-06-30T03:13:17.452778",
+        "order_price": 150.33519943583696,
+        "order_execution_price": 150.49139358583145,
+        "order_execution_time": "2025-06-30T03:13:17.452778",
+        "status": "FILLED",
+        "slippage": 0.15619414999449077,
+        "reason": ""
+    },
+    {
+        "date": "2025-06-03",
+        "signal": "SELL",
+        "order_placement_time": "2025-06-30T03:13:17.453776",
+        "order_price": 192.1199371092156,
+        "order_execution_price": 191.91303461322377,
+        "order_execution_time": "2025-06-30T03:13:17.453776",
+        "status": "FILLED",
+        "slippage": 0.20690249599184085,
+        "reason": ""
+    }
+]
